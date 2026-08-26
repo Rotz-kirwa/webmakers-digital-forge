@@ -52,7 +52,7 @@ function ProjectNotFound() {
 function CaseStudy() {
   const { project } = Route.useLoaderData();
   const index = projects.findIndex((p) => p.slug === project.slug);
-  const next = projects[(index + 1) % projects.length];
+  const next = projects[(index + 1) % projects.length] ?? projects[0]!;
 
   return (
     <>
